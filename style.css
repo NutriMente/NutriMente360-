@@ -1,0 +1,359 @@
+/* ============================
+   STILE LANDING CONSULENZA COMPLETO – NUTRIMENTE
+============================= */
+
+body {
+  background: linear-gradient(to bottom right, #e0f7f1, #d7fbe8);
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-wrapper {
+  display: inline-block;
+  margin: 30px auto 10px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #ecfef7 100%);
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 280px;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-section {
+  padding: 80px 20px 60px;
+  background: linear-gradient(to bottom right, #e0f7f1, #d7fbe8);
+  text-align: center;
+}
+
+.hero-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #38b381;
+  margin: 30px auto 20px;
+  max-width: 900px;
+  line-height: 1.4;
+}
+
+.sub-text {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.cta {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.nutrimente-btn {
+  background-color: #38b381;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 1.1em;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 0 10px #38b381, 0 0 20px #38b381, 0 0 30px #38b381;
+}
+
+.nutrimente-btn:hover {
+  background-color: #2d9e6e;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #2d9e6e, 0 0 30px #2d9e6e, 0 0 40px #2d9e6e;
+}
+
+/* SEZIONE TRASFORMAZIONI */
+.transform-section {
+  background-color: #f9fdfb;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.transform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+.transform-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+
+.transform-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* PERCHÉ NASCE */
+.why-nutrimente {
+  background-color: #f9fdfb;
+  padding: 80px 20px 100px;
+  text-align: center;
+}
+
+.why-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding-left: 0;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.why-list li {
+  background: #f4fdf9;
+  border-left: 6px solid #38b381;
+  padding: 16px 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  text-align: left;
+}
+
+.why-list li:hover {
+  transform: translateY(-2px);
+}
+
+.why-nutrimente em {
+  color: #666;
+  font-style: italic;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* A CHI È ADATTO */
+.target-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.target-box {
+  background: #f9fdfb;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.target-icon {
+  font-size: 2rem;
+  color: #38b381;
+  margin-bottom: 10px;
+}
+
+.target-box p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* TEAM GARANZIA */
+.guarantee-section {
+  background-color: #f2fbf7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.team-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.team-card img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.team-card h3 {
+  font-size: 1.3rem;
+  color: #38b381;
+  margin-bottom: 5px;
+}
+
+.team-card .role {
+  font-size: 0.95rem;
+  color: #6ba3c2;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.team-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* FAQ */
+.faq-section {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.faq-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: #f9fdfb;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  color: #38b381;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #fff;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  font-size: 0.95rem;
+  color: #555;
+  padding: 10px 0 15px;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: #f4fdf4;
+  color: #555;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.95rem;
+  border-top: 1px solid #dbeee2;
+  margin-top: 60px;
+}
+
+.site-footer a {
+  color: #38b381;
+  text-decoration: none;
+  margin: 0 6px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+/* CHECKLIST UNIVERSALE (DESKTOP + MOBILE) */
+.checkmark {
+  color: #38b381;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.check-list li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+  background: #f4fdf9;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 1.8rem;
+  }
+
+  .sub-text {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .transform-grid,
+  .why-list,
+  .target-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
