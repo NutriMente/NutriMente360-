@@ -387,6 +387,20 @@ body {
   .sub-text { font-size: 1rem; padding: 0 10px; }
   .why-list, .team-grid { grid-template-columns: 1fr; }
 }
+/* --- Mobile fix: nascondi la scritta in alto nelle trasformazioni --- */
+@media (max-width: 640px){
+  #trasformazioni .transform-card img{
+    object-position: center 68% !important; /* aumenta (%) per scendere ancora */
+  }
+}
+
+/* tablet piccolo (opzionale) */
+@media (min-width: 641px) and (max-width: 820px){
+  #trasformazioni .transform-card img{
+    object-position: center 58% !important;
+  }
+}
+
 
 
 
