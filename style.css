@@ -605,8 +605,18 @@ h2.hero-text,
     max-width: 95vw;
     margin: 0 auto;
   }
+@media (min-width: 1400px){
+  .transform-grid{
+    width: min(98vw, 1800px); /* ancora più largo sui display big */
+    gap: 36px;
+  }
+  .transform-card img{
+    border-radius: 22px;
+  }
 }
-}
+
+
+
 
 
 
