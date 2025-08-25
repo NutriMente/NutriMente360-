@@ -400,6 +400,15 @@ body {
     object-position: center 58% !important;
   }
 }
+/* --- Mobile fix: zoom trasformazioni --- */
+@media (max-width: 640px){
+  #trasformazioni .transform-card img{
+    object-fit: cover;
+    object-position: center 75%; /* più in basso così la scritta sparisce */
+    transform: scale(1.25);     /* zoom 25% */
+  }
+}
+
 
 
 
