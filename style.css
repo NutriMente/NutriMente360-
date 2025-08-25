@@ -281,6 +281,80 @@ body{
   display:flex; align-items:flex-start; font-size:1.1rem; color:#444; margin-bottom:20px;
   background:#f4fdf9; padding:16px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
+/* ====== HOTFIX: CTA centrate in "Cosa ottieni" e "Adatto a te se" ====== */
+.features-circles .cta,
+.target-fit .cta {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 24px auto 0 !important;
+  width: 100%;
+}
+.features-circles .cta a,
+.target-fit .cta a {
+  float: none !important;
+  margin: 0 auto !important;
+  display: inline-flex !important;
+}
+
+/* ====== HOTFIX: Prima/Dopo molto più grandi ====== */
+/* Desktop: 2 colonne grandi, sfrutta più larghezza */
+.transform-section {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.transform-grid{
+  grid-template-columns: repeat(2, minmax(420px, 1fr)) !important;
+  gap: 48px !important;
+  max-width: 1600px !important; /* più ampio per far “respirare” le immagini */
+  padding: 0 24px !important;    /* leggero respiro ai lati */
+}
+/* immagini: grandi e profonde, con crop gradevole */
+.transform-card{
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.transform-card img{
+  width: 100% !important;
+  height: 560px !important;      /* altezza generosa */
+  object-fit: cover !important;  /* riempie senza deformare */
+  border-radius: 20px !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,.20) !important;
+}
+
+/* Tablet: resta 2×2 ma un filo più contenuto */
+@media (max-width: 1024px){
+  .transform-grid{
+    grid-template-columns: repeat(2, minmax(320px, 1fr)) !important;
+    gap: 32px !important;
+    max-width: 1200px !important;
+  }
+  .transform-card img{
+    height: 460px !important;
+  }
+}
+
+/* Mobile: 1 per riga, sempre grande */
+@media (max-width: 640px){
+  .transform-grid{
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    max-width: 96vw !important;
+    padding: 0 10px !important;
+  }
+  .transform-card img{
+    height: 78vw !important;     /* grande ma responsiva su schermi piccoli */
+    max-height: 520px !important;
+  }
+}
+
+/* (Facoltativo) Se qualche wrapper forza allineamento a sinistra, raddrizziamo */
+.features-circles, .target-fit {
+  text-align: center !important;
+}
+
 
 
 
