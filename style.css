@@ -527,6 +527,42 @@ h2.hero-text,
   }
   .nutrimente-btn:hover{ transform:none; }
 }
+/* === TRASFORMAZIONI PIÙ GRANDI === */
+
+/* Desktop: massimo 2 immagini per riga */
+@media (min-width: 768px){
+  .transform-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne */
+    max-width: 900px; /* contenitore più stretto per immagini più grandi */
+    gap: 26px;
+  }
+  .transform-card img {
+    border-radius: 16px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.15);
+  }
+}
+
+/* Mobile: 1 immagine per riga, molto grande */
+@media (max-width: 767px){
+  .transform-grid {
+    grid-template-columns: 1fr; /* una sola colonna */
+    max-width: 100%;
+    gap: 20px;
+  }
+  .transform-card {
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+  .transform-card img {
+    width: 100%;
+    max-width: 95vw;  /* quasi a tutta larghezza */
+    margin: 0 auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  }
+}
+
 
 
 
