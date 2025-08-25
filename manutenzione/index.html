@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sezione in manutenzione | NutriMente</title>
+  <style>
+    :root{
+      --nm-green:#38b381;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 100% -200px, #e9fff5 0%, transparent 60%),
+        radial-gradient(900px 500px at -200px 0%, #ecf5ff 0%, transparent 60%),
+        linear-gradient(to bottom right, #e0f7f1, #d7fbe8);
+      min-height:100dvh;
+      display:grid;
+      place-items:center;
+      padding:24px 16px;
+    }
+
+    /* Card centrale */
+    .notice{
+      width:min(680px, 92vw);
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:0 16px 40px rgba(15,23,42,.10);
+      padding:24px 22px;
+      text-align:center;
+    }
+
+    /* Badge */
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      background:#f0fdf4; color:#065f46; border:1px solid #bbf7d0;
+      font-weight:700; font-size:13px; letter-spacing:.2px;
+      margin-bottom:10px;
+    }
+
+    /* Titolo & testo */
+    h1{
+      margin:10px 0 8px;
+      font-size: clamp(22px, 2.6vw + 10px, 30px);
+      line-height:1.25;
+      color: var(--nm-green);
+      font-weight:800;
+    }
+    p.lead{
+      margin:0 auto 18px;
+      max-width:560px;
+      color:#475569;
+      font-size: clamp(15px, .5vw + 13px, 18px);
+      line-height:1.6;
+    }
+    .list{
+      margin:0 auto 10px; padding:0; list-style:none;
+      max-width:560px; color:var(--muted); font-size:15px;
+      display:grid; gap:8px;
+    }
+    .list li{ display:flex; gap:10px; align-items:flex-start; }
+    .list .dot{
+      width:8px; height:8px; border-radius:999px; background:var(--nm-green); margin-top:9px;
+      box-shadow:0 0 0 3px rgba(56,179,129,.18);
+      flex:0 0 8px;
+    }
+
+    /* Bottone */
+    .actions{ margin-top:16px; display:flex; justify-content:center; }
+    .btn{
+      display:inline-block;
+      background:var(--nm-green);
+      color:#fff; text-decoration:none;
+      padding:12px 18px; border-radius:999px;
+      font-weight:800; border:1px solid transparent;
+      box-shadow:0 10px 26px rgba(56,179,129,.25);
+      transition:transform .12s ease, box-shadow .25s ease, filter .2s ease;
+    }
+    .btn:hover{ transform:translateY(-1.5px); box-shadow:0 16px 34px rgba(56,179,129,.28); filter:brightness(.98); }
+    .btn:active{ transform:translateY(0); box-shadow:0 10px 26px rgba(56,179,129,.25); }
+    .btn:focus-visible{ outline:3px solid rgba(56,179,129,.35); outline-offset:3px; }
+
+    .mini{ margin-top:16px; font-size:12.5px; color:#94a3b8; }
+  </style>
+</head>
+<body>
+
+  <main class="notice" role="status" aria-live="polite">
+    <div class="badge">🚧 In manutenzione</div>
+    <h1>Area Riservata</h1>
+    <p class="lead">
+      Stiamo ultimando una sezione esclusiva con <strong>ricette</strong>, <strong>libreria esercizi</strong> e
+      <strong>contenuti premium</strong> pensati per te. Sarà online a breve!
+    </p>
+
+    <ul class="list" aria-label="Cosa troverai presto">
+      <li><span class="dot" aria-hidden="true"></span> Ricette fit semplici e veloci, organizzate per ogni momento della giornata.</li>
+      <li><span class="dot" aria-hidden="true"></span> Una libreria di esercizi completa con filtri e tutorial.</li>
+      <li><span class="dot" aria-hidden="true"></span> Dirette, replay e articoli esclusivi del team NutriMente.</li>
+    </ul>
+
+    <div class="actions">
+      <!-- torna alla landing in root -->
+      <a href="../index.html" class="btn">← Torna alla Home</a>
+    </div>
+
+    <div class="mini">© 2025 NutriMente360°</div>
+  </main>
+
+</body>
+</html>
