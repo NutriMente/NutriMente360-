@@ -442,5 +442,32 @@ body {
   transform: scale(1.03); 
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12); 
 }
+/* --- OFFERTA: cerchi controllati --- */
+.circle-img{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+@media (min-width: 768px){
+  .circle-img{ width: 140px; height: 140px; }
+}
+/* --- RESET COLORE TITOLI (testo scuro elegante) --- */
+h1.hero-text,
+h2.hero-text,
+.section-title {
+  color: #0f172a;  /* inchiostro */
+}
+
+/* Il verde rimane SOLO sulle parole avvolte in <span class="highlight"> */
+.hero-text .highlight,
+.section-title .highlight {
+  color: #38b381;
+  font-weight: 800;
+}
+
 
 
