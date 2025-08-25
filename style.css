@@ -18,7 +18,8 @@ body {
     radial-gradient(900px 500px at -200px 0%, #ecf5ff 0%, transparent 60%),
     #fff;
 }
-/* Logo */
+
+/* Logo (wrapper generico) */
 .logo-wrapper {
   display: inline-block;
   margin: 30px auto 10px;
@@ -28,22 +29,26 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .logo-wrapper:hover { 
   transform: scale(1.03); 
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1); 
 }
 
-.logo {
-  max-width: 300px; /* aumentato da 160px */
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.1);
+/* Logo – mobile first: grande ma gestibile */
+.hero-section .logo {
+  width: clamp(220px, 72vw, 320px);
+  max-width: none;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.12);
   display: block;
   margin: 0 auto;
 }
+@media (min-width: 768px){
+  .hero-section .logo { width: clamp(240px, 28vw, 320px); }
+}
 
-
-/* HERO (layout nuovo: testo a sinistra, foto a destra) */
+/* HERO (layout nuovo: testo a sinistra, foto a destra – se usato) */
 .hero-section { padding: 80px 20px 60px; text-align: center; background: linear-gradient(to bottom right, #e0f7f1, #d7fbe8); }
 .hero-rail{
   display:flex; align-items:center; justify-content:space-between;
@@ -63,34 +68,37 @@ body {
   display:flex; align-items:center; justify-content:center;
 }
 .hero-photo img {
-  width: 70%;   /* più piccola */
+  width: 70%;
   max-width: 240px;
   height: auto;
   border-radius: 24px;
   box-shadow: 0 12px 36px rgba(0,0,0,.16);
 }
 
-}
-
 /* Spaziature e titoli global */
 .hero-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  color: #38b381;
-  margin: 30px auto 20px;
-  max-width: 900px;
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  font-weight: 600;
   line-height: 1.4;
-  text-align:center;
+  color: #0f172a;
+  text-align: center;
+  margin: 24px auto;
+  max-width: 900px;
 }
 .sub-text {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
   line-height: 1.6;
-  text-align:center;
+  color: #475569;
+  text-align: center;
+  margin: 12px auto 30px;
+  max-width: 720px;
 }
-.cta { text-align: center; margin: 40px auto; }
+
+/* Evidenziazione selettiva */
+.highlight { color:#38b381; font-weight:700; }
+.accent { color:#f57c00; font-weight:600; }
 
 /* Bottoni */
 .nutrimente-btn {
@@ -112,15 +120,109 @@ body {
   background:#fff; color:#0f172a; border:1px solid #e5e7eb;
   box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
+.nutrimente-btn.small {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 6px #38b381, 0 0 12px #38b381;
+}
 
-/* FEATURES PRO */
+/* HEADER MINIMAL (se presente) */
+.site-header {
+  background: transparent;
+  padding: 12px 20px;
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+}
+.header-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header-logo img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* ===== Features con immagini circolari ===== */
+.features-circles{ padding:40px 16px 10px; }
+.fc-grid{
+  max-width:1120px; margin:0 auto; padding:0 16px;
+  display:grid; gap:20px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.fc-item{ 
+  background:#fff; border:1px solid #e5e7eb; border-radius:18px;
+  box-shadow:0 8px 24px rgba(15,23,42,.06);
+  padding:16px 14px; text-align:center;
+  transition:transform .18s ease, box-shadow .25s ease, border-color .2s ease;
+}
+.fc-item:hover{ transform:translateY(-3px); box-shadow:0 16px 36px rgba(15,23,42,.12); border-color:#cfeee1; }
+.fc-thumb{
+  width:160px; height:160px; margin:6px auto 10px;
+  border-radius:50%; overflow:hidden; background:#f3f4f6;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+.fc-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.fc-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
+.fc-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.55; }
+
+/* Tablet: 3 per riga */
+@media (max-width: 980px){
+  .fc-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+/* Mobile: 2 per riga */
+@media (max-width: 640px){
+  .fc-grid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+  .fc-thumb{ width:130px; height:130px; }
+  .fc-title{ font-size:16px; }
+  .fc-text{ font-size:14px; }
+}
+
+/* ===== Sezione "Adatto a te se…" ===== */
+.target-fit{ padding:40px 16px 10px; }
+.ats-grid{
+  max-width:1120px; margin:0 auto; padding:0 16px;
+  display:grid; gap:18px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.ats-item{
+  background:#fff; border:1px solid #e5e7eb; border-radius:18px; text-align:center;
+  box-shadow:0 8px 24px rgba(15,23,42,.06);
+  padding:16px 14px; transition:transform .18s ease, box-shadow .25s ease, border-color .2s ease;
+}
+.ats-item:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(15,23,42,.12); border-color:#cfeee1; }
+.ats-thumb{
+  width:120px; height:120px; margin:6px auto 10px;
+  border-radius:50%; overflow:hidden; background:#f3f4f6;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+}
+.ats-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.ats-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
+.ats-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.6; }
+
+/* Tablet: 3 per riga */
+@media (max-width: 980px){
+  .ats-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+/* Mobile: 2 per riga */
+@media (max-width: 640px){
+  .ats-grid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+  .ats-thumb{ width:100px; height:100px; }
+  .ats-title{ font-size:16px; }
+  .ats-text{ font-size:14px; }
+}
+
+/* ===== FEATURES PRO (testuali) ===== */
 .features-pro{ padding:40px 16px 10px; }
 .f-grid{
   display:grid; gap:16px; max-width:1120px; margin:0 auto; padding:0 16px;
   grid-template-columns: repeat(12, 1fr);
 }
 .f-card{
-  grid-column: span 6; /* 2 per riga su desktop */
+  grid-column: span 6;
   background:#fff; border:1px solid #e5e7eb; border-radius:18px;
   padding:16px 16px 14px; box-shadow:0 8px 24px rgba(0,0,0,.06);
   display:grid; grid-template-columns:auto 1fr; align-items:flex-start; gap:12px;
@@ -135,36 +237,68 @@ body {
 .f-card h3{ margin:0 0 6px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
 .f-card p{ margin:0; color:#475569; line-height:1.5; }
 
-/* SEZIONE TRASFORMAZIONI */
+/* ===== TRASFORMAZIONI (PRIMA & DOPO) – versione grande ===== */
 .transform-section {
   background-color: #f9fdfb;
-  padding: 80px 20px;
+  padding: 80px 16px;
   text-align: center;
 }
 .transform-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr); /* sempre 2 colonne su desktop */
+  width: min(96vw, 1600px);
+  max-width: none;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 .transform-card {
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
   overflow: hidden;
-  padding: 20px;
+  padding: 0;
   text-align: center;
 }
 .transform-card img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.16);
 }
 
-/* PERCHÉ NASCE */
+/* Mobile: 1 per riga, quasi full-bleed */
+@media (max-width: 767px){
+  .transform-section{
+    padding: 56px 0;
+  }
+  .transform-grid{
+    grid-template-columns: 1fr;
+    gap: 22px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0 10px;
+  }
+  .transform-card img{
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.16);
+  }
+}
+
+/* Ultra-wide desktop: ancora più largo */
+@media (min-width: 1400px){
+  .transform-grid{
+    width: min(98vw, 1800px);
+    gap: 36px;
+  }
+  .transform-card img{ border-radius: 22px; }
+}
+
+/* ===== PERCHÉ NASCE ===== */
 .why-nutrimente {
   background-color: #f9fdfb;
   padding: 80px 20px 100px;
@@ -197,40 +331,7 @@ body {
   font-size: 1rem;
 }
 
-/* A CHI È ADATTO (sezione opzionale) */
-.target-section { background-color: #ffffff; padding: 60px 20px; text-align: center; }
-.target-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px; max-width: 1000px; margin: 40px auto;
-}
-.target-box {
-  background: #f9fdfb;
-  padding: 25px; border-radius: 16px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-}
-.target-icon { font-size: 2rem; color: #38b381; margin-bottom: 10px; }
-.target-box p { font-size: 1rem; color: #555; line-height: 1.4; }
-
-/* TEAM GARANZIA */
-.guarantee-section { background-color: #f2fbf7; padding: 60px 20px; text-align: center; }
-.team-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px; max-width: 1000px; margin: 40px auto;
-}
-.team-card {
-  background: #ffffff; padding: 25px; border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06); text-align: center;
-}
-.team-card img {
-  width: 100%; max-width: 220px; border-radius: 16px;
-  margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.team-card h3 { font-size: 1.3rem; color: #38b381; margin-bottom: 5px; }
-.team-card .role { font-size: 0.95rem; color: #6ba3c2; margin-bottom: 10px; font-weight: 600; }
-.team-card p { font-size: 1rem; color: #555; line-height: 1.4; }
-
-/* FAQ */
+/* ===== FAQ ===== */
 .faq-section { background-color: #ffffff; padding: 60px 20px; text-align: center; }
 .faq-wrapper { max-width: 700px; margin: 0 auto; text-align: left; }
 .faq-item { margin-bottom: 20px; border-radius: 10px; background: #f9fdfb; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; }
@@ -241,7 +342,7 @@ body {
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background-color: #fff; padding: 0 20px; }
 .faq-answer p { font-size: 0.95rem; color: #555; padding: 10px 0 15px; line-height: 1.5; }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .site-footer {
   background-color: #f4fdf4; color: #555; text-align: center;
   padding: 40px 20px; font-size: 0.95rem; border-top: 1px solid #dbeee2; margin-top: 60px;
@@ -250,7 +351,7 @@ body {
 .site-footer a:hover { text-decoration: underline; }
 .footer-tagline { font-size: 0.9rem; color: #888; margin-top: 10px; }
 
-/* CHECKLIST UNIVERSALE (DESKTOP + MOBILE) */
+/* ===== CHECKLIST UNIVERSALE ===== */
 .checkmark { color: #38b381; font-weight: bold; font-size: 1.2rem; display: inline-block; margin-right: 10px; }
 .check-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; }
 .check-list li {
@@ -258,13 +359,27 @@ body {
   background: #f4fdf9; padding: 16px 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* RESPONSIVE */
+/* ===== RESPONSIVE EXTRA ===== */
 @media (max-width: 860px){
-  .f-card{ grid-column: span 12; } /* Features: 1 per riga su mobile */
+  .f-card{ grid-column: span 12; }
 }
 @media (max-width: 768px) {
-  .hero-text { font-size: 1.8rem; }
+  /* Titolo principale più compatto e ordinato su mobile */
+  .hero-text{
+    font-size: 1.55rem;
+    line-height: 1.35;
+    margin: 14px auto 12px;
+    max-width: 92vw;
+  }
+  .hero-text br{ display:none; }
+
   .sub-text { font-size: 1rem; padding: 0 10px; }
+
+  /* Logo più piccolo su mobile */
+  .hero-section .logo{
+    width: clamp(170px, 50vw, 220px);
+  }
+
   .transform-grid, .why-list, .target-grid, .team-grid { grid-template-columns: 1fr; }
 }
 /* Mantieni due colonne nel hero anche su mobile stretti: foto a destra */
@@ -275,174 +390,8 @@ body {
   .logo-inline img{ width:92px; }
   .hero-heading{ font-size:clamp(24px, 5vw + 8px, 32px); }
 }
-/* HEADER MINIMAL */
-.site-header {
-  background: transparent;
-  padding: 12px 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-}
-.header-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header-logo img {
-  width: 180px; /* LOGO PIU GRANDE */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-}
-.nutrimente-btn.small {
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  box-shadow: 0 0 6px #38b381, 0 0 12px #38b381;
-}
-/* ===== Features con immagini circolari ===== */
-.features-circles{ padding:40px 16px 10px; }
 
-.fc-grid{
-  max-width:1120px; margin:0 auto; padding:0 16px;
-  display:grid; gap:20px;
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.fc-item{ 
-  background:#fff; border:1px solid #e5e7eb; border-radius:18px;
-  box-shadow:0 8px 24px rgba(15,23,42,.06);
-  padding:16px 14px; text-align:center;
-  transition:transform .18s ease, box-shadow .25s ease, border-color .2s ease;
-}
-.fc-item:hover{ transform:translateY(-3px); box-shadow:0 16px 36px rgba(15,23,42,.12); border-color:#cfeee1; }
-
-.fc-thumb{
-  width:160px; height:160px; margin:6px auto 10px;
-  border-radius:50%; overflow:hidden; background:#f3f4f6;
-  box-shadow:0 8px 22px rgba(0,0,0,.08);
-}
-.fc-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-.fc-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
-.fc-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.55; }
-
-/* Tablet: 3 per riga */
-@media (max-width: 980px){
-  .fc-grid{ grid-template-columns: repeat(3, 1fr); }
-}
-
-/* Mobile: 2 per riga */
-@media (max-width: 640px){
-  .fc-grid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
-  .fc-thumb{ width:130px; height:130px; }
-  .fc-title{ font-size:16px; }
-  .fc-text{ font-size:14px; }
-}
-/* ===== Sezione "Adatto a te se…" ===== */
-.target-fit{ padding:40px 16px 10px; }
-
-.ats-grid{
-  max-width:1120px; margin:0 auto; padding:0 16px;
-  display:grid; gap:18px;
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.ats-item{
-  background:#fff; border:1px solid #e5e7eb; border-radius:18px; text-align:center;
-  box-shadow:0 8px 24px rgba(15,23,42,.06);
-  padding:16px 14px; transition:transform .18s ease, box-shadow .25s ease, border-color .2s ease;
-}
-.ats-item:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(15,23,42,.12); border-color:#cfeee1; }
-
-.ats-thumb{
-  width:120px; height:120px; margin:6px auto 10px;
-  border-radius:50%; overflow:hidden; background:#f3f4f6;
-  box-shadow:0 8px 22px rgba(0,0,0,.08);
-}
-.ats-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-.ats-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
-.ats-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.6; }
-
-/* Tablet: 3 per riga */
-@media (max-width: 980px){
-  .ats-grid{ grid-template-columns: repeat(3, 1fr); }
-}
-
-/* Mobile: 2 per riga */
-@media (max-width: 640px){
-  .ats-grid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
-  .ats-thumb{ width:100px; height:100px; }
-  .ats-title{ font-size:16px; }
-  .ats-text{ font-size:14px; }
-}
-.hero-text {
-  font-family: "Playfair Display", serif;
-  font-size: 2.3rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #0f172a;
-  text-align: center;
-  margin: 24px auto;
-  max-width: 900px;
-}
-
-.sub-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #475569;
-  text-align: center;
-  margin: 12px auto 30px;
-  max-width: 720px;
-}
-
-.highlight {
-  color: #38b381; 
-  font-weight: 700;
-}
-
-.accent {
-  color: #f57c00;
-  font-weight: 600;
-}
-/* Logo – mobile first: grande e ben visibile */
-.hero-section .logo {
-  width: clamp(220px, 72vw, 320px);  /* mobile prioritario */
-  max-width: none;                   /* rimuove i limiti di max-width */
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.12);
-  display: block;
-  margin: 0 auto;
-}
-
-/* Tablet / Desktop: un po’ più contenuto ma ancora protagonista */
-@media (min-width: 768px){
-  .hero-section .logo {
-    width: clamp(240px, 28vw, 320px);
-  }
-}
-
-/* Wrapper ok: non limita la larghezza del logo */
-.logo-wrapper {
-  display: inline-block;
-  margin: 30px auto 10px;
-  padding: 24px;
-  background: linear-gradient(135deg, #ffffff 0%, #ecfef7 100%);
-  border-radius: 30px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.logo-wrapper:hover { 
-  transform: scale(1.03); 
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12); 
-}
-/* --- OFFERTA: cerchi controllati --- */
+/* --- Immagini a cerchio generiche (se usi <img class="circle-img">) --- */
 .circle-img{
   width: 120px;
   height: 120px;
@@ -455,233 +404,16 @@ body {
 @media (min-width: 768px){
   .circle-img{ width: 140px; height: 140px; }
 }
+
 /* --- RESET COLORE TITOLI (testo scuro elegante) --- */
 h1.hero-text,
 h2.hero-text,
-.section-title {
-  color: #0f172a;  /* inchiostro */
-}
-
-/* Il verde rimane SOLO sulle parole avvolte in <span class="highlight"> */
+.section-title { color: #0f172a; }
 .hero-text .highlight,
-.section-title .highlight {
-  color: #38b381;
-  font-weight: 800;
-}
-/* === MOBILE TUNING (≤ 540px) === */
-@media (max-width: 540px){
+.section-title .highlight { color: #38b381; font-weight: 800; }
 
-  /* Titolo principale più compatto e ordinato */
-  .hero-text{
-    font-size: 1.55rem;      /* prima ~1.8–2.3 */
-    line-height: 1.35;
-    margin: 14px auto 12px;
-    max-width: 92vw;
-  }
-  /* Nasconde i <br> dentro il titolo su mobile per evitare spezzature brutte */
-  .hero-text br{ display:none; }
+  
 
-  /* Logo più piccolo su mobile */
-  .hero-section .logo{
-    width: clamp(170px, 50vw, 220px);
-  }
-
-  /* Sezione "prima & dopo" più grande e leggibile */
-  .transform-section{
-    padding: 56px 14px;
-  }
-  .transform-grid{
-    grid-template-columns: 1fr;    /* 1 per riga su schermi piccoli */
-    gap: 18px;
-    max-width: 520px;
-  }
-  .transform-card{
-    padding: 10px;                 /* meno bordo, più spazio all’immagine */
-    border-radius: 14px;
-  }
-  .transform-card img{
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 24px rgba(0,0,0,.10);
-  }
-
-  /* Cerchi (Cosa ottieni / Adatto a te) più equilibrati */
-  .fc-thumb{ width:120px; height:120px; }
-  .ats-thumb{ width:100px; height:100px; }
-
-  /* CTA sticky un filo più compatta su schermi piccoli */
-  .sticky-cta .bar{
-    padding: 8px 10px;
-    gap: 8px;
-    font-size: 0.95rem;
-  }
-  .sticky-cta .nutrimente-btn{ padding: 10px 14px; font-size: .95rem; }
-}
-
-/* === OPZIONALE: alleggerisci il bagliore dei bottoni su mobile === */
-@media (max-width: 540px){
-  .nutrimente-btn{
-    box-shadow: 0 0 8px rgba(56,179,129,.6), 0 0 16px rgba(56,179,129,.45);
-    transform: none;
-  }
-  .nutrimente-btn:hover{ transform:none; }
-}
-/* === TRASFORMAZIONI PIÙ GRANDI === */
-
-/* Desktop: massimo 2 immagini per riga */
-@media (min-width: 768px){
-  .transform-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colonne */
-    max-width: 900px; /* contenitore più stretto per immagini più grandi */
-    gap: 26px;
-  }
-  .transform-card img {
-    border-radius: 16px;
-    box-shadow: 0 12px 28px rgba(0,0,0,.15);
-  }
-}
-
-/* Mobile: 1 immagine per riga, molto grande */
-@media (max-width: 767px){
-  .transform-grid {
-    grid-template-columns: 1fr; /* una sola colonna */
-    max-width: 100%;
-    gap: 20px;
-  }
-  .transform-card {
-    padding: 0;
-    box-shadow: none;
-    background: transparent;
-  }
-  .transform-card img {
-    width: 100%;
-    max-width: 95vw;  /* quasi a tutta larghezza */
-    margin: 0 auto;
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  }
-/* === TRASFORMAZIONI GRANDI, SEMPRE 2 A 2 SU DESKTOP === */
-.transform-section {
-  background-color: #f9fdfb;
-  padding: 80px 16px;
-  text-align: center;
-}
-
-.transform-grid {
-  display: grid;
-  gap: 28px;
-  grid-template-columns: repeat(2, 1fr); /* sempre 2 colonne */
-  max-width: 1200px;  /* contenitore largo per dare respiro */
-  margin: 0 auto;
-  padding-top: 40px;
-}
-
-.transform-card {
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
-  overflow: hidden;
-  padding: 0;
-  text-align: center;
-}
-
-.transform-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 18px;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
-}
-
-/* Mobile: 1 per riga */
-@media (max-width: 767px){
-  .transform-grid {
-    grid-template-columns: 1fr; /* 1 colonna */
-    gap: 22px;
-    max-width: 100%;
-  }
-  .transform-card img {
-    max-width: 95vw;
-    margin: 0 auto;
-  }
-@media (min-width: 1400px){
-  .transform-grid{
-    width: min(98vw, 1800px); /* ancora più largo sui display big */
-    gap: 36px;
-  }
-  .transform-card img{
-    border-radius: 22px;
-  }
-}
-/* === PRIMA & DOPO ENORMI (override finale) ========================== */
-
-/* Sezione più leggera ai lati per dare tutto lo spazio alle immagini */
-.transform-section{
-  padding: 60px 8px !important;
-}
-
-/* GRID: sempre 2 colonne su desktop/tablet larghi, container larghissimo */
-.transform-section .transform-grid{
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 28px !important;
-  width: min(96vw, 1600px) !important;   /* contenitore molto largo */
-  max-width: none !important;
-  margin: 0 auto !important;
-  padding-top: 24px !important;
-}
-
-/* CARD: via bordi/padding per lasciare solo l’immagine grande */
-.transform-section .transform-card{
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-}
-
-/* IMMAGINE: occupa tutta la colonna con ombra morbida */
-.transform-section .transform-card img{
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  border-radius: 18px !important;
-  box-shadow: 0 14px 36px rgba(0,0,0,.16) !important;
-}
-
-/* MOBILE: 1 colonna, quasi full-bleed (quasi a tutta larghezza schermo) */
-@media (max-width: 767px){
-  .transform-section{
-    padding: 50px 0 !important;
-  }
-  .transform-section .transform-grid{
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-
-    /* trucco "quasi full-bleed" mantenendo un minimo di respiro */
-    width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    margin-right: calc(50% - 50vw) !important;
-    padding: 0 10px !important;  /* piccolo respiro ai lati */
-  }
-  .transform-section .transform-card img{
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    border-radius: 16px !important;
-    box-shadow: 0 12px 30px rgba(0,0,0,.16) !important;
-  }
-}
-
-/* ULTRA-WIDE: spingi ancora un pelino sui monitor grandi */
-@media (min-width: 1400px){
-  .transform-section .transform-grid{
-    width: min(98vw, 1800px) !important;
-    gap: 32px !important;
-  }
-  .transform-section .transform-card img{
-    border-radius: 20px !important;
-  }
-}
 
 
 
