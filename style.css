@@ -405,7 +405,7 @@ body {
   #trasformazioni .transform-card img{
     object-fit: cover;
     object-position: center 75%; /* più in basso così la scritta sparisce */
-    transform: scale(1.00);     /* zoom 25% */
+    transform: scale(0.70);     /* zoom 10% */
   }
 /* --- Mobile fix: titolo principale --- */
 @media (max-width: 640px){
@@ -416,6 +416,7 @@ body {
     padding: 0 14px;        /* margine laterale */
   }
 }
+
 
 
 
