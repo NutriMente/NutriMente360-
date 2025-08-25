@@ -614,6 +614,75 @@ h2.hero-text,
     border-radius: 22px;
   }
 }
+/* === PRIMA & DOPO ENORMI (override finale) ========================== */
+
+/* Sezione più leggera ai lati per dare tutto lo spazio alle immagini */
+.transform-section{
+  padding: 60px 8px !important;
+}
+
+/* GRID: sempre 2 colonne su desktop/tablet larghi, container larghissimo */
+.transform-section .transform-grid{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+  width: min(96vw, 1600px) !important;   /* contenitore molto largo */
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding-top: 24px !important;
+}
+
+/* CARD: via bordi/padding per lasciare solo l’immagine grande */
+.transform-section .transform-card{
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+/* IMMAGINE: occupa tutta la colonna con ombra morbida */
+.transform-section .transform-card img{
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  border-radius: 18px !important;
+  box-shadow: 0 14px 36px rgba(0,0,0,.16) !important;
+}
+
+/* MOBILE: 1 colonna, quasi full-bleed (quasi a tutta larghezza schermo) */
+@media (max-width: 767px){
+  .transform-section{
+    padding: 50px 0 !important;
+  }
+  .transform-section .transform-grid{
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+
+    /* trucco "quasi full-bleed" mantenendo un minimo di respiro */
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding: 0 10px !important;  /* piccolo respiro ai lati */
+  }
+  .transform-section .transform-card img{
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.16) !important;
+  }
+}
+
+/* ULTRA-WIDE: spingi ancora un pelino sui monitor grandi */
+@media (min-width: 1400px){
+  .transform-section .transform-grid{
+    width: min(98vw, 1800px) !important;
+    gap: 32px !important;
+  }
+  .transform-section .transform-card img{
+    border-radius: 20px !important;
+  }
+}
+
 
 
 
