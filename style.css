@@ -52,7 +52,7 @@ body{
 }
 .logo-wrapper:hover{ transform:scale(1.03); box-shadow:0 14px 32px rgba(0,0,0,.12); }
 
-/* Logo – mobile first: grande e ben visibile */
+/* Logo – mobile first */
 .hero-section .logo{
   width:clamp(220px,72vw,320px);
   max-width:none;
@@ -73,7 +73,6 @@ body{
   background: linear-gradient(to bottom right, #e0f7f1, #d7fbe8);
 }
 
-/* Titoli + testo generali */
 .hero-text{
   font-family:"Playfair Display", serif;
   font-size:2.3rem;
@@ -93,12 +92,9 @@ body{
   margin:12px auto 30px;
   max-width:720px;
 }
-
-/* Evidenziazioni */
 .highlight{ color:#38b381; font-weight:700; }
 .accent{ color:#f57c00; font-weight:600; }
 
-/* CTA */
 .hero-ctas{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
 .nutrimente-btn{
   background-color:#38b381; color:#fff;
@@ -114,7 +110,7 @@ body{
   box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
 
-/* ---------------- “Cosa ottieni” – Cards con immagini circolari ---------------- */
+/* ---------------- “Cosa ottieni” – Circolari ---------------- */
 .features-circles{ padding:40px 16px 10px; }
 .fc-grid{
   max-width:1120px; margin:0 auto; padding:0 16px;
@@ -136,10 +132,7 @@ body{
 .fc-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
 .fc-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
 .fc-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.55; }
-
-/* Tablet */
 @media (max-width:980px){ .fc-grid{ grid-template-columns:repeat(3,1fr); } }
-/* Mobile */
 @media (max-width:640px){
   .fc-grid{ grid-template-columns:repeat(2,1fr); gap:14px; }
   .fc-thumb{ width:130px; height:130px; }
@@ -153,17 +146,14 @@ body{
   padding:60px 10px;
   text-align:center;
 }
-
-/* Desktop/Tablet: 2 colonne grandi */
+/* Prima/Dopo grandi */
 .transform-grid{
   display:grid;
-  grid-template-columns:repeat(2, minmax(450px, 1fr));
+  grid-template-columns:repeat(2, 1fr);
   gap:40px;
-  max-width:1200px;
+  max-width:1400px;
   margin:0 auto;
 }
-
-/* Card senza fronzoli, immagine protagonista */
 .transform-card{
   background:transparent;
   border-radius:0;
@@ -173,11 +163,10 @@ body{
 }
 .transform-card img{
   width:100%; height:auto; display:block;
-  border-radius:16px;
+  border-radius:18px;
   box-shadow:0 12px 28px rgba(0,0,0,.18);
 }
-
-/* Mobile: 1 colonna full width quasi a tutto schermo */
+/* Mobile: una sola colonna grande */
 @media (max-width:767px){
   .transform-grid{
     grid-template-columns:1fr;
@@ -188,7 +177,7 @@ body{
     width:100%;
     max-width:95vw;
     margin:0 auto;
-    border-radius:12px;
+    border-radius:14px;
   }
 }
 
@@ -217,9 +206,7 @@ body{
   text-align:left;
 }
 .why-list li:hover{ transform:translateY(-2px); }
-.why-nutrimente em{
-  color:#666; font-style:italic; display:inline-block; margin-top:10px; font-size:1rem;
-}
+.why-nutrimente em{ color:#666; font-style:italic; margin-top:10px; font-size:1rem; }
 
 /* ---------------- Sezione “Adatto a te se…” ---------------- */
 .target-fit{ padding:40px 16px 10px; }
@@ -231,21 +218,17 @@ body{
 .ats-item{
   background:#fff; border:1px solid #e5e7eb; border-radius:18px; text-align:center;
   box-shadow:0 8px 24px rgba(15,23,42,.06);
-  padding:16px 14px; transition:transform .18s ease, box-shadow .25s ease, border-color .2s ease;
+  padding:16px 14px;
 }
-.ats-item:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(15,23,42,.12); border-color:#cfeee1; }
 .ats-thumb{
   width:120px; height:120px; margin:6px auto 10px;
   border-radius:50%; overflow:hidden; background:#f3f4f6;
   box-shadow:0 8px 22px rgba(0,0,0,.08);
 }
-.ats-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
-.ats-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
-.ats-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.6; }
-
-/* Tablet */
+.ats-thumb img{ width:100%; height:100%; object-fit:cover; }
+.ats-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; }
+.ats-text{ margin:0; color:#475569; font-size:14.5px; }
 @media (max-width:980px){ .ats-grid{ grid-template-columns:repeat(3,1fr); } }
-/* Mobile */
 @media (max-width:640px){
   .ats-grid{ grid-template-columns:repeat(2,1fr); gap:14px; }
   .ats-thumb{ width:100px; height:100px; }
@@ -253,14 +236,10 @@ body{
   .ats-text{ font-size:14px; }
 }
 
-/* ---------------- Team / Garanzia ---------------- */
-.guarantee-section{
-  background-color:#f2fbf7;
-  padding:60px 20px;
-  text-align:center;
-}
+/* ---------------- Team (Federico, Vanna, Sara) – INVARIATI ---------------- */
+.guarantee-section{ background:#f2fbf7; padding:60px 20px; text-align:center; }
 .team-grid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:30px; max-width:1000px; margin:40px auto;
 }
 .team-card{
@@ -278,10 +257,7 @@ body{
 /* ---------------- FAQ ---------------- */
 .faq-section{ background:#fff; padding:60px 20px; text-align:center; }
 .faq-wrapper{ max-width:700px; margin:0 auto; text-align:left; }
-.faq-item{
-  margin-bottom:20px; border-radius:10px; background:#f9fdfb;
-  box-shadow:0 4px 10px rgba(0,0,0,.05); overflow:hidden;
-}
+.faq-item{ margin-bottom:20px; border-radius:10px; background:#f9fdfb; box-shadow:0 4px 10px rgba(0,0,0,.05); }
 .faq-question{
   background:none; border:0; font-size:1rem; font-weight:bold;
   padding:15px 20px; cursor:pointer; width:100%; text-align:left; color:#38b381;
@@ -298,55 +274,13 @@ body{
 .site-footer a:hover{ text-decoration:underline; }
 .footer-tagline{ font-size:.9rem; color:#888; margin-top:10px; }
 
-/* ---------------- Features “Pro” (sezione opzionale) ---------------- */
-.features-pro{ padding:40px 16px 10px; }
-.f-grid{
-  display:grid; gap:16px; max-width:1120px; margin:0 auto; padding:0 16px;
-  grid-template-columns:repeat(12,1fr);
-}
-.f-card{
-  grid-column:span 6;
-  background:#fff; border:1px solid #e5e7eb; border-radius:18px;
-  padding:16px 16px 14px; box-shadow:0 8px 24px rgba(0,0,0,.06);
-  display:grid; grid-template-columns:auto 1fr; align-items:flex-start; gap:12px;
-  transition:transform .18s ease, box-shadow .25s ease, border-color .2s ease;
-}
-.f-card:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.12); border-color:#cfeee1; }
-.f-icon{
-  width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(180deg,#eafff4,#f3fff9); color:#2a9d6d;
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-}
-.f-card h3{ margin:0 0 6px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
-.f-card p{ margin:0; color:#475569; line-height:1.5; }
-@media (max-width:860px){ .f-card{ grid-column:span 12; } }
-
 /* ---------------- Checklist universale ---------------- */
-.checkmark{ color:#38b381; font-weight:bold; font-size:1.2rem; display:inline-block; margin-right:10px; }
+.checkmark{ color:#38b381; font-weight:bold; font-size:1.2rem; margin-right:10px; }
 .check-list{ list-style:none; padding:0; max-width:800px; margin:0 auto; }
 .check-list li{
   display:flex; align-items:flex-start; font-size:1.1rem; color:#444; margin-bottom:20px;
   background:#f4fdf9; padding:16px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
-
-/* ---------------- Responsive tipografia globale ---------------- */
-@media (max-width:768px){
-  .hero-text{ font-size:1.8rem; }
-  .sub-text{ font-size:1rem; padding:0 10px; }
-}
-
-/* ---------------- Immagini rotonde “universali” ---------------- */
-.circle-img{
-  width:120px; height:120px; border-radius:50%;
-  object-fit:cover; display:block; margin:0 auto 10px;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-@media (min-width:768px){ .circle-img{ width:140px; height:140px; } }
-
-/* ---------------- Reset colore titoli (testo scuro elegante) ---------------- */
-h1.hero-text, h2.hero-text, .section-title{ color:#0f172a; }
-.hero-text .highlight, .section-title .highlight{ color:#38b381; font-weight:800; }
-
 
 
 
