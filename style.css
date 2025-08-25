@@ -468,6 +468,66 @@ h2.hero-text,
   color: #38b381;
   font-weight: 800;
 }
+/* === MOBILE TUNING (≤ 540px) === */
+@media (max-width: 540px){
+
+  /* Titolo principale più compatto e ordinato */
+  .hero-text{
+    font-size: 1.55rem;      /* prima ~1.8–2.3 */
+    line-height: 1.35;
+    margin: 14px auto 12px;
+    max-width: 92vw;
+  }
+  /* Nasconde i <br> dentro il titolo su mobile per evitare spezzature brutte */
+  .hero-text br{ display:none; }
+
+  /* Logo più piccolo su mobile */
+  .hero-section .logo{
+    width: clamp(170px, 50vw, 220px);
+  }
+
+  /* Sezione "prima & dopo" più grande e leggibile */
+  .transform-section{
+    padding: 56px 14px;
+  }
+  .transform-grid{
+    grid-template-columns: 1fr;    /* 1 per riga su schermi piccoli */
+    gap: 18px;
+    max-width: 520px;
+  }
+  .transform-card{
+    padding: 10px;                 /* meno bordo, più spazio all’immagine */
+    border-radius: 14px;
+  }
+  .transform-card img{
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.10);
+  }
+
+  /* Cerchi (Cosa ottieni / Adatto a te) più equilibrati */
+  .fc-thumb{ width:120px; height:120px; }
+  .ats-thumb{ width:100px; height:100px; }
+
+  /* CTA sticky un filo più compatta su schermi piccoli */
+  .sticky-cta .bar{
+    padding: 8px 10px;
+    gap: 8px;
+    font-size: 0.95rem;
+  }
+  .sticky-cta .nutrimente-btn{ padding: 10px 14px; font-size: .95rem; }
+}
+
+/* === OPZIONALE: alleggerisci il bagliore dei bottoni su mobile === */
+@media (max-width: 540px){
+  .nutrimente-btn{
+    box-shadow: 0 0 8px rgba(56,179,129,.6), 0 0 16px rgba(56,179,129,.45);
+    transform: none;
+  }
+  .nutrimente-btn:hover{ transform:none; }
+}
+
 
 
 
