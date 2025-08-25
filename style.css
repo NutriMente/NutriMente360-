@@ -561,7 +561,53 @@ h2.hero-text,
     border-radius: 14px;
     box-shadow: 0 8px 24px rgba(0,0,0,.12);
   }
+/* === TRASFORMAZIONI GRANDI, SEMPRE 2 A 2 SU DESKTOP === */
+.transform-section {
+  background-color: #f9fdfb;
+  padding: 80px 16px;
+  text-align: center;
 }
+
+.transform-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(2, 1fr); /* sempre 2 colonne */
+  max-width: 1200px;  /* contenitore largo per dare respiro */
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.transform-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+}
+
+.transform-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+
+/* Mobile: 1 per riga */
+@media (max-width: 767px){
+  .transform-grid {
+    grid-template-columns: 1fr; /* 1 colonna */
+    gap: 22px;
+    max-width: 100%;
+  }
+  .transform-card img {
+    max-width: 95vw;
+    margin: 0 auto;
+  }
+}
+}
+
 
 
 
