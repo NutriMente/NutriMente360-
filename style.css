@@ -2,15 +2,16 @@
    STILE LANDING CONSULENZA COMPLETO – NUTRIMENTE
 ============================= */
 
-body {
+/* Base */
+body{
   background: linear-gradient(to bottom right, #e0f7f1, #d7fbe8);
   font-family: 'Inter', sans-serif;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  color:#333;
+  margin:0;
+  padding:0;
 }
 
-/* Accent + utilità */
+/* Utilità */
 .k{ color:#38b381; font-weight:800; }
 .gradient-bg{
   background:
@@ -19,141 +20,108 @@ body {
     #fff;
 }
 
-/* Logo (wrapper generico) */
-.logo-wrapper {
-  display: inline-block;
-  margin: 30px auto 10px;
-  padding: 20px;
-  background: linear-gradient(135deg, #ffffff 0%, #ecfef7 100%);
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ---------------- Header minimal (se usato) ---------------- */
+.site-header{
+  background:transparent;
+  padding:12px 20px;
+  position:absolute; top:0; left:0; right:0;
+  z-index:50;
 }
-.logo-wrapper:hover { 
-  transform: scale(1.03); 
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1); 
-}
-
-/* Logo – mobile first: grande ma gestibile */
-.hero-section .logo {
-  width: clamp(220px, 72vw, 320px);
-  max-width: none;
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.12);
-  display: block;
-  margin: 0 auto;
-}
-@media (min-width: 768px){
-  .hero-section .logo { width: clamp(240px, 28vw, 320px); }
-}
-
-/* HERO (layout nuovo: testo a sinistra, foto a destra – se usato) */
-.hero-section { padding: 80px 20px 60px; text-align: center; background: linear-gradient(to bottom right, #e0f7f1, #d7fbe8); }
-.hero-rail{
+.header-container{
+  max-width:1120px; margin:0 auto;
   display:flex; align-items:center; justify-content:space-between;
-  gap:16px; max-width:1120px; margin:0 auto; padding:0 16px;
 }
-.hero-copy{ flex:1 1 560px; min-width:0; text-align:left; }
-.logo-inline img{ width:120px; height:auto; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.1); }
-.hero-heading{
-  font-family:'Playfair Display', serif;
-  margin:14px 0 8px; font-size:clamp(28px, 3.2vw + 12px, 44px); line-height:1.08; color:#0f172a;
+.header-logo img{
+  width:180px; height:auto; border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
-.hero-lead{ margin:8px 0; font-size:clamp(16px, .5vw + 14px, 18px); line-height:1.6; color:#555; }
-.hero-ctas{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
-
-.hero-photo{
-  flex:0 0 clamp(180px, 30vw, 360px);
-  display:flex; align-items:center; justify-content:center;
-}
-.hero-photo img {
-  width: 70%;
-  max-width: 240px;
-  height: auto;
-  border-radius: 24px;
-  box-shadow: 0 12px 36px rgba(0,0,0,.16);
+.nutrimente-btn.small{
+  padding:10px 20px; font-size:.95rem;
+  box-shadow:0 0 6px #38b381, 0 0 12px #38b381;
 }
 
-/* Spaziature e titoli global */
-.hero-text {
-  font-family: "Playfair Display", serif;
-  font-size: 2.3rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #0f172a;
-  text-align: center;
-  margin: 24px auto;
-  max-width: 900px;
+/* ---------------- Logo (hero) ---------------- */
+.logo-wrapper{
+  display:inline-block;
+  margin:30px auto 10px;
+  padding:24px;
+  background:linear-gradient(135deg,#ffffff 0%,#ecfef7 100%);
+  border-radius:30px;
+  box-shadow:0 10px 24px rgba(0,0,0,.06);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
-.sub-text {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: #475569;
-  text-align: center;
-  margin: 12px auto 30px;
-  max-width: 720px;
+.logo-wrapper:hover{ transform:scale(1.03); box-shadow:0 14px 32px rgba(0,0,0,.12); }
+
+/* Logo – mobile first: grande e ben visibile */
+.hero-section .logo{
+  width:clamp(220px,72vw,320px);
+  max-width:none;
+  height:auto;
+  border-radius:18px;
+  box-shadow:0 10px 26px rgba(0,0,0,.12);
+  display:block;
+  margin:0 auto;
+}
+@media (min-width:768px){
+  .hero-section .logo{ width:clamp(240px,28vw,320px); }
 }
 
-/* Evidenziazione selettiva */
-.highlight { color:#38b381; font-weight:700; }
-.accent { color:#f57c00; font-weight:600; }
-
-/* Bottoni */
-.nutrimente-btn {
-  background-color: #38b381;
-  color: white;
-  font-weight: 600;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-size: 1.1em;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 0 10px #38b381, 0 0 20px #38b381, 0 0 30px #38b381;
+/* ---------------- HERO ---------------- */
+.hero-section{
+  padding:80px 20px 60px;
+  text-align:center;
+  background: linear-gradient(to bottom right, #e0f7f1, #d7fbe8);
 }
-.nutrimente-btn:hover { background-color: #2d9e6e; transform: scale(1.05); box-shadow: 0 0 20px #2d9e6e, 0 0 30px #2d9e6e, 0 0 40px #2d9e6e; }
+
+/* Titoli + testo generali */
+.hero-text{
+  font-family:"Playfair Display", serif;
+  font-size:2.3rem;
+  font-weight:600;
+  line-height:1.4;
+  color:#0f172a;
+  text-align:center;
+  margin:24px auto;
+  max-width:900px;
+}
+.sub-text{
+  font-family:'Inter', sans-serif;
+  font-size:1.15rem;
+  line-height:1.6;
+  color:#475569;
+  text-align:center;
+  margin:12px auto 30px;
+  max-width:720px;
+}
+
+/* Evidenziazioni */
+.highlight{ color:#38b381; font-weight:700; }
+.accent{ color:#f57c00; font-weight:600; }
+
+/* CTA */
+.hero-ctas{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:12px; }
+.nutrimente-btn{
+  background-color:#38b381; color:#fff;
+  font-weight:600; border:0;
+  padding:14px 28px; border-radius:999px; font-size:1.1em;
+  cursor:pointer; text-decoration:none; display:inline-block;
+  transition:background .3s ease, transform .2s ease;
+  box-shadow:0 0 10px #38b381, 0 0 20px #38b381, 0 0 30px #38b381;
+}
+.nutrimente-btn:hover{ background:#2d9e6e; transform:scale(1.05); box-shadow:0 0 20px #2d9e6e, 0 0 30px #2d9e6e, 0 0 40px #2d9e6e; }
 .nutrimente-btn.secondary{
   background:#fff; color:#0f172a; border:1px solid #e5e7eb;
   box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
-.nutrimente-btn.small {
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  box-shadow: 0 0 6px #38b381, 0 0 12px #38b381;
-}
 
-/* HEADER MINIMAL (se presente) */
-.site-header {
-  background: transparent;
-  padding: 12px 20px;
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-}
-.header-container {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.header-logo img {
-  width: 180px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-}
-
-/* ===== Features con immagini circolari ===== */
+/* ---------------- “Cosa ottieni” – Cards con immagini circolari ---------------- */
 .features-circles{ padding:40px 16px 10px; }
 .fc-grid{
   max-width:1120px; margin:0 auto; padding:0 16px;
   display:grid; gap:20px;
   grid-template-columns: repeat(5, 1fr);
 }
-.fc-item{ 
+.fc-item{
   background:#fff; border:1px solid #e5e7eb; border-radius:18px;
   box-shadow:0 8px 24px rgba(15,23,42,.06);
   padding:16px 14px; text-align:center;
@@ -169,19 +137,91 @@ body {
 .fc-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
 .fc-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.55; }
 
-/* Tablet: 3 per riga */
-@media (max-width: 980px){
-  .fc-grid{ grid-template-columns: repeat(3, 1fr); }
-}
-/* Mobile: 2 per riga */
-@media (max-width: 640px){
-  .fc-grid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+/* Tablet */
+@media (max-width:980px){ .fc-grid{ grid-template-columns:repeat(3,1fr); } }
+/* Mobile */
+@media (max-width:640px){
+  .fc-grid{ grid-template-columns:repeat(2,1fr); gap:14px; }
   .fc-thumb{ width:130px; height:130px; }
   .fc-title{ font-size:16px; }
   .fc-text{ font-size:14px; }
 }
 
-/* ===== Sezione "Adatto a te se…" ===== */
+/* ---------------- SEZIONE TRASFORMAZIONI (PRIMA/DOPO) ---------------- */
+.transform-section{
+  background-color:#f9fdfb;
+  padding:60px 10px;
+  text-align:center;
+}
+
+/* Desktop/Tablet: 2 colonne grandi */
+.transform-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(450px, 1fr));
+  gap:40px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+/* Card senza fronzoli, immagine protagonista */
+.transform-card{
+  background:transparent;
+  border-radius:0;
+  box-shadow:none;
+  overflow:hidden;
+  padding:0;
+}
+.transform-card img{
+  width:100%; height:auto; display:block;
+  border-radius:16px;
+  box-shadow:0 12px 28px rgba(0,0,0,.18);
+}
+
+/* Mobile: 1 colonna full width quasi a tutto schermo */
+@media (max-width:767px){
+  .transform-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+    max-width:95vw;
+  }
+  .transform-card img{
+    width:100%;
+    max-width:95vw;
+    margin:0 auto;
+    border-radius:12px;
+  }
+}
+
+/* ---------------- Perché nasce ---------------- */
+.why-nutrimente{
+  background-color:#f9fdfb;
+  padding:80px 20px 100px;
+  text-align:center;
+}
+.why-list{
+  list-style:none;
+  max-width:800px;
+  margin:40px auto 0;
+  padding-left:0;
+  font-size:1.1rem;
+  color:#444;
+}
+.why-list li{
+  background:#f4fdf9;
+  border-left:6px solid #38b381;
+  padding:16px 24px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+  transition:transform .2s ease;
+  text-align:left;
+}
+.why-list li:hover{ transform:translateY(-2px); }
+.why-nutrimente em{
+  color:#666; font-style:italic; display:inline-block; margin-top:10px; font-size:1rem;
+}
+
+/* ---------------- Sezione “Adatto a te se…” ---------------- */
 .target-fit{ padding:40px 16px 10px; }
 .ats-grid{
   max-width:1120px; margin:0 auto; padding:0 16px;
@@ -203,26 +243,69 @@ body {
 .ats-title{ margin:6px 0 4px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
 .ats-text{ margin:0; color:#475569; font-size:14.5px; line-height:1.6; }
 
-/* Tablet: 3 per riga */
-@media (max-width: 980px){
-  .ats-grid{ grid-template-columns: repeat(3, 1fr); }
-}
-/* Mobile: 2 per riga */
-@media (max-width: 640px){
-  .ats-grid{ grid-template-columns: repeat(2, 1fr); gap:14px; }
+/* Tablet */
+@media (max-width:980px){ .ats-grid{ grid-template-columns:repeat(3,1fr); } }
+/* Mobile */
+@media (max-width:640px){
+  .ats-grid{ grid-template-columns:repeat(2,1fr); gap:14px; }
   .ats-thumb{ width:100px; height:100px; }
   .ats-title{ font-size:16px; }
   .ats-text{ font-size:14px; }
 }
 
-/* ===== FEATURES PRO (testuali) ===== */
+/* ---------------- Team / Garanzia ---------------- */
+.guarantee-section{
+  background-color:#f2fbf7;
+  padding:60px 20px;
+  text-align:center;
+}
+.team-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+  gap:30px; max-width:1000px; margin:40px auto;
+}
+.team-card{
+  background:#fff; padding:25px; border-radius:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.06); text-align:center;
+}
+.team-card img{
+  width:100%; max-width:220px; border-radius:16px;
+  margin-bottom:15px; box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+.team-card h3{ font-size:1.3rem; color:#38b381; margin-bottom:5px; }
+.team-card .role{ font-size:.95rem; color:#6ba3c2; margin-bottom:10px; font-weight:600; }
+.team-card p{ font-size:1rem; color:#555; line-height:1.4; }
+
+/* ---------------- FAQ ---------------- */
+.faq-section{ background:#fff; padding:60px 20px; text-align:center; }
+.faq-wrapper{ max-width:700px; margin:0 auto; text-align:left; }
+.faq-item{
+  margin-bottom:20px; border-radius:10px; background:#f9fdfb;
+  box-shadow:0 4px 10px rgba(0,0,0,.05); overflow:hidden;
+}
+.faq-question{
+  background:none; border:0; font-size:1rem; font-weight:bold;
+  padding:15px 20px; cursor:pointer; width:100%; text-align:left; color:#38b381;
+}
+.faq-answer{ max-height:0; overflow:hidden; transition:max-height .3s ease; background:#fff; padding:0 20px; }
+.faq-answer p{ font-size:.95rem; color:#555; padding:10px 0 15px; line-height:1.5; }
+
+/* ---------------- Footer ---------------- */
+.site-footer{
+  background-color:#f4fdf4; color:#555; text-align:center;
+  padding:40px 20px; font-size:.95rem; border-top:1px solid #dbeee2; margin-top:60px;
+}
+.site-footer a{ color:#38b381; text-decoration:none; margin:0 6px; }
+.site-footer a:hover{ text-decoration:underline; }
+.footer-tagline{ font-size:.9rem; color:#888; margin-top:10px; }
+
+/* ---------------- Features “Pro” (sezione opzionale) ---------------- */
 .features-pro{ padding:40px 16px 10px; }
 .f-grid{
   display:grid; gap:16px; max-width:1120px; margin:0 auto; padding:0 16px;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns:repeat(12,1fr);
 }
 .f-card{
-  grid-column: span 6;
+  grid-column:span 6;
   background:#fff; border:1px solid #e5e7eb; border-radius:18px;
   padding:16px 16px 14px; box-shadow:0 8px 24px rgba(0,0,0,.06);
   display:grid; grid-template-columns:auto 1fr; align-items:flex-start; gap:12px;
@@ -231,190 +314,38 @@ body {
 .f-card:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.12); border-color:#cfeee1; }
 .f-icon{
   width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-  background:linear-gradient(180deg, #eafff4, #f3fff9); color:#2a9d6d;
+  background:linear-gradient(180deg,#eafff4,#f3fff9); color:#2a9d6d;
   box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
 .f-card h3{ margin:0 0 6px; font-weight:900; color:#0f172a; font-size:18px; line-height:1.2; }
 .f-card p{ margin:0; color:#475569; line-height:1.5; }
+@media (max-width:860px){ .f-card{ grid-column:span 12; } }
 
-/* ===== TRASFORMAZIONI (PRIMA & DOPO) – versione grande ===== */
-.transform-section {
-  background-color: #f9fdfb;
-  padding: 80px 16px;
-  text-align: center;
-}
-.transform-grid {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: repeat(2, 1fr); /* sempre 2 colonne su desktop */
-  width: min(96vw, 1600px);
-  max-width: none;
-  margin: 0 auto;
-  padding-top: 40px;
-}
-.transform-card {
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  overflow: hidden;
-  padding: 0;
-  text-align: center;
-}
-.transform-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.16);
+/* ---------------- Checklist universale ---------------- */
+.checkmark{ color:#38b381; font-weight:bold; font-size:1.2rem; display:inline-block; margin-right:10px; }
+.check-list{ list-style:none; padding:0; max-width:800px; margin:0 auto; }
+.check-list li{
+  display:flex; align-items:flex-start; font-size:1.1rem; color:#444; margin-bottom:20px;
+  background:#f4fdf9; padding:16px 20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
 
-/* Mobile: 1 per riga, quasi full-bleed */
-@media (max-width: 767px){
-  .transform-section{
-    padding: 56px 0;
-  }
-  .transform-grid{
-    grid-template-columns: 1fr;
-    gap: 22px;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    padding: 0 10px;
-  }
-  .transform-card img{
-    max-width: 100%;
-    margin: 0 auto;
-    border-radius: 16px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.16);
-  }
+/* ---------------- Responsive tipografia globale ---------------- */
+@media (max-width:768px){
+  .hero-text{ font-size:1.8rem; }
+  .sub-text{ font-size:1rem; padding:0 10px; }
 }
 
-/* Ultra-wide desktop: ancora più largo */
-@media (min-width: 1400px){
-  .transform-grid{
-    width: min(98vw, 1800px);
-    gap: 36px;
-  }
-  .transform-card img{ border-radius: 22px; }
-}
-
-/* ===== PERCHÉ NASCE ===== */
-.why-nutrimente {
-  background-color: #f9fdfb;
-  padding: 80px 20px 100px;
-  text-align: center;
-}
-.why-list {
-  list-style: none;
-  max-width: 800px;
-  margin: 40px auto 0;
-  padding-left: 0;
-  font-size: 1.1rem;
-  color: #444;
-}
-.why-list li {
-  background: #f4fdf9;
-  border-left: 6px solid #38b381;
-  padding: 16px 24px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
-  text-align: left;
-}
-.why-list li:hover { transform: translateY(-2px); }
-.why-nutrimente em {
-  color: #666;
-  font-style: italic;
-  display: inline-block;
-  margin-top: 10px;
-  font-size: 1rem;
-}
-
-/* ===== FAQ ===== */
-.faq-section { background-color: #ffffff; padding: 60px 20px; text-align: center; }
-.faq-wrapper { max-width: 700px; margin: 0 auto; text-align: left; }
-.faq-item { margin-bottom: 20px; border-radius: 10px; background: #f9fdfb; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; }
-.faq-question {
-  background: none; border: none; font-size: 1rem; font-weight: bold;
-  padding: 15px 20px; cursor: pointer; width: 100%; text-align: left; color: #38b381;
-}
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background-color: #fff; padding: 0 20px; }
-.faq-answer p { font-size: 0.95rem; color: #555; padding: 10px 0 15px; line-height: 1.5; }
-
-/* ===== FOOTER ===== */
-.site-footer {
-  background-color: #f4fdf4; color: #555; text-align: center;
-  padding: 40px 20px; font-size: 0.95rem; border-top: 1px solid #dbeee2; margin-top: 60px;
-}
-.site-footer a { color: #38b381; text-decoration: none; margin: 0 6px; }
-.site-footer a:hover { text-decoration: underline; }
-.footer-tagline { font-size: 0.9rem; color: #888; margin-top: 10px; }
-
-/* ===== CHECKLIST UNIVERSALE ===== */
-.checkmark { color: #38b381; font-weight: bold; font-size: 1.2rem; display: inline-block; margin-right: 10px; }
-.check-list { list-style: none; padding: 0; max-width: 800px; margin: 0 auto; }
-.check-list li {
-  display: flex; align-items: flex-start; font-size: 1.1rem; color: #444; margin-bottom: 20px;
-  background: #f4fdf9; padding: 16px 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-/* ===== RESPONSIVE EXTRA ===== */
-@media (max-width: 860px){
-  .f-card{ grid-column: span 12; }
-}
-@media (max-width: 768px) {
-  /* Titolo principale più compatto e ordinato su mobile */
-  .hero-text{
-    font-size: 1.55rem;
-    line-height: 1.35;
-    margin: 14px auto 12px;
-    max-width: 92vw;
-  }
-  .hero-text br{ display:none; }
-
-  .sub-text { font-size: 1rem; padding: 0 10px; }
-
-  /* Logo più piccolo su mobile */
-  .hero-section .logo{
-    width: clamp(170px, 50vw, 220px);
-  }
-
-  .transform-grid, .why-list, .target-grid, .team-grid { grid-template-columns: 1fr; }
-}
-/* Mantieni due colonne nel hero anche su mobile stretti: foto a destra */
-@media (max-width: 540px){
-  .hero-rail{ gap:12px; }
-  .hero-photo{ flex-basis:42vw; }
-  .hero-copy{ flex-basis:58vw; }
-  .logo-inline img{ width:92px; }
-  .hero-heading{ font-size:clamp(24px, 5vw + 8px, 32px); }
-}
-
-/* --- Immagini a cerchio generiche (se usi <img class="circle-img">) --- */
+/* ---------------- Immagini rotonde “universali” ---------------- */
 .circle-img{
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  width:120px; height:120px; border-radius:50%;
+  object-fit:cover; display:block; margin:0 auto 10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
-@media (min-width: 768px){
-  .circle-img{ width: 140px; height: 140px; }
-}
+@media (min-width:768px){ .circle-img{ width:140px; height:140px; } }
 
-/* --- RESET COLORE TITOLI (testo scuro elegante) --- */
-h1.hero-text,
-h2.hero-text,
-.section-title { color: #0f172a; }
-.hero-text .highlight,
-.section-title .highlight { color: #38b381; font-weight: 800; }
-
-  
-
-
+/* ---------------- Reset colore titoli (testo scuro elegante) ---------------- */
+h1.hero-text, h2.hero-text, .section-title{ color:#0f172a; }
+.hero-text .highlight, .section-title .highlight{ color:#38b381; font-weight:800; }
 
 
 
